@@ -35,14 +35,14 @@ Ahora todas las clases que se encuentren en el directorio /_classes_ se cargará
 Existe una **alternativa mejor y más flexible** mediante la función _spl_autoload_register()_ (de hecho es posible que la función __autoload() quede obsoleta y sea eliminada en el futuro). _spl_autoload_register()_ acepta una **función callable** como parámetro donde se puede definir una **lógica concreta para la carga de clases**. Con _spl_autoload_register()_ es posible **definir varias funciones para la carga de clases** (lo que no es posible con ___autoload()_):
 
 ```
-function miAutoloadUno($clase){
+function miAautoloadUno($clase){
     require "/directorio/.$clase.php";
 }
 function miAutoloadDos($clase){
     require "/otroDirectorio/.$clase.php";
 }
-spl_autoload_register("autoloadUno");
-spl_autoload_register("autoloadDos");
+spl_autoload_register("miAutoloadUno");
+spl_autoload_register("miAutoloadDos");
 ```
 
 Algunas otras funciones útiles de _**spl_autoload**_:
